@@ -14,5 +14,5 @@ cd new_project
 ```
 3. and delete everything except the .devcontaienr folder
 ```
-find . -mindepth 1 -not -name '.devcontainer' -not -path './.devcontainer/*' -exec rm -rf {} +
+find . -mindepth 1 -not -name '.devcontainer' -not -path './.devcontainer/*' -not -name '.vscode' -not -path './.vscode/*' -exec rm -rf {} +
 ```
