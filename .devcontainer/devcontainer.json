@@ -1,0 +1,35 @@
+{
+  "name": "Hypermodern Python Dev Container",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/poetry:2": {},
+    "ghcr.io/devcontainers/features/pipx:1": {}
+  },
+  "postCreateCommand": "pipx install cookiecutter && pipx install nox && pipx inject nox nox-poetry && poetry self update && pip install black flake8 isort mypy",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "esbenp.prettier-vscode",
+        "ms-python.black-formatter",
+        "charliermarsh.ruff",
+        "ms-python.flake8",
+        "streetsidesoftware.code-spell-checker"
+      ]
+    }
+  },
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python",
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.rulers": [88]
+  },
+  "forwardPorts": [],
+  "remoteUser": "vscode"
+}
